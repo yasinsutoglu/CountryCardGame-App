@@ -15,18 +15,16 @@ let timeCounter;
 let bestScore= 0
 
 
-
+//GAME START BUTTON EVENT
 btn.addEventListener("click", ()=> {
     container.style.display = "none"
     timeCounter = 60
 
     let bestCurrentScore = localStorage.getItem("bestScore") || 0
 
-     
     const contDiv = document.createElement("div");
     contDiv.classList.add("container-fluid");
     
-     
 
     contDiv.innerHTML = `
     <div><span class="score">Best Score: <span></span></span> </div>
@@ -49,7 +47,6 @@ btn.addEventListener("click", ()=> {
         if(timeCounter<1) {
             clearInterval(intervalId)
            contDiv.style.display = "none";
-           console.log(gamePoint)
 
             if(gamePoint>bestCurrentScore) {
                 bestScore = gamePoint
@@ -76,7 +73,8 @@ btn.addEventListener("click", ()=> {
     }).then((data)=> renderCountry(data)).catch((err)=> console.log(err))
 }
 
-        const renderCountry = (countries) => {
+// RENDERING FETCHED COUNTRY
+const renderCountry = (countries) => {
         console.log(countries)
         rand1 = Math.trunc(Math.random()*countries.length);
         rand2 = Math.trunc(Math.random()*countries.length);
@@ -84,9 +82,10 @@ btn.addEventListener("click", ()=> {
         rand4 = Math.trunc(Math.random()*countries.length);
         
         randomNums =[rand1,rand2,rand3,rand4]
-            console.log(randomNums)
+        // console.log(randomNums)
+
         let random = Math.floor((Math.random() * 4))
-        console.log(randomNums[random])
+        // console.log(randomNums[random])
 
 
         if(randomNums[random] ==randomNums[0]) {
@@ -104,11 +103,7 @@ btn.addEventListener("click", ()=> {
         
         const {name:{common}, flags:{svg}} =countries[randomCountryNum];
         
-       
-        
-
-
-
+        // Composing country card with options
         const cardDiv = document.querySelector(".card-div")
         cardDiv.innerHTML = `<div class="card mx-auto h-75" style="width: 15rem;">
             <img src="${svg}" class="card-img-top" alt="...">
@@ -129,6 +124,7 @@ btn.addEventListener("click", ()=> {
              </ul>
         </div>`;
 
+        //OPTIONS BUTTON CLICK EVENT (BY USING CAPTURING) TO FETCH NEW COUNTRY CARD
            document.querySelector(".list-group").addEventListener("click", (e) => {
                if(e.target.classList.contains("btn-danger")){
                   if(  e.target.innerText == countries[randomCountryNum].name.common){
@@ -151,8 +147,8 @@ btn.addEventListener("click", ()=> {
 
     }
 
-    document.querySelector("#try-again").addEventListener("click", ()=> {
-
+    // PLAYING THE GAME AGAING
+document.querySelector("#try-again").addEventListener("click", ()=> {
         window.location.reload();
     })
 
