@@ -18,7 +18,7 @@ let bestScore= 0
 
 btn.addEventListener("click", ()=> {
     container.style.display = "none"
-    timeCounter = 50
+    timeCounter = 60
 
     let bestCurrentScore = localStorage.getItem("bestScore") || 0
 
