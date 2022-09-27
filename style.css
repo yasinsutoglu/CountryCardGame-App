@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: linear-gradient(to right top, #3B1B2D, #52394D, #68586E, #80798E, #9B9BAD, #A6A5BE, #B1AECE, #BDB8DF, #C8A6DC, #DC90CD
+, #EF78B0, #FB5F88);
+background-repeat: no-repeat;
+height: 160vh;
+background-size: cover;
+background-position: center;
+
+}
+
+.container {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.container p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#button {
+    font-size: 1.5rem;
+    box-shadow: 1px 3px rgba(0,0,0,0.7);
+    transition: 0.5s all ease-in-out;
+}
+
+#button:hover {
+    transform: scale(1.08);
+
+}
+
+.container-fluid {
+    text-align: center;
+
+}
+
+.container-fluid .score {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 1.5rem;
+    color: #3B1B2D;
+    font-weight: 500;
+}
+
+.time {
+    font-size: 3rem;
+    font-weight: 500;
+    color: crimson;
+}
+
+.title {
+    font-size: 2rem;
+    color: #3B1B2D;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px crimson; ;
+    
+}
+
+.games {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: crimson;
+}
+
+.card-img-top {
+    max-height: 150px !important;
+}
+
+.finalDiv {
+    text-align: center;
+    margin-top: 3rem;
+}
+.finalDiv .p-score{
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    font-size:1.5rem;
+    color: #3B1B2D;
+    font-weight: 500;
+    display: inline;
+}
+
+.finalDiv .points {
+    margin-top: 2rem;
+    font-size:2rem;
+    color: #3B1B2D;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px crimson;
+}
+
+#try-again {
+    box-shadow: 1px 1px 4px  #3B1B2D;
+    
+}
+
+@media screen and (max-width:450px) {
+    .time {
+        text-align: left;
+    }
+    .title {
+        font-size: 1.6rem;
+    }
+}
+
