@@ -40,7 +40,7 @@ btn.addEventListener("click", ()=> {
 
      fetchCountry();
 
-
+    //GAME TIME COUNTER PROCESS 
     const intervalId = setInterval(() => {
         timeCounter--;
         document.querySelector(".time").innerText = timeCounter
